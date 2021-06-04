@@ -1,0 +1,633 @@
+@use "variables";
+@use "mixins";
+
+html { box-sizing: border-box; }
+*, ::after, ::before { box-sizing: inherit; }
+
+body{
+    background-color: white;
+    font-family: variables.$default-font;
+    font-size: variables.$body-text;
+    margin: 0;
+}
+
+h1, h2, h3{
+    font-family: variables.$special-font;
+
+}
+h1, h3{
+    text-align: center;
+}
+h3{
+    font-size: 18px;
+}
+p{
+    text-align: variables.$body-align;
+    margin-top: 0;
+}
+a{
+    font-size: 12px;
+}
+.mainheader, .main{
+    max-width: 850px;
+    margin: 0 auto;
+    @include mixins.phone{
+        max-width: 650px;
+    }
+}
+.homepage{
+    @include mixins.phone{
+        padding-left: 3%;
+        padding-right: 3%;
+    }
+}
+.mbox{
+    margin: 0 auto;
+    @include mixins.phone{
+        width: 150px;
+    }
+}
+.menu{
+    @include mixins.phone{
+        padding-right: 3%;
+    }
+
+    &__toggler{
+        @include mixins.phone{
+            cursor: pointer;
+            position: relative;
+        }
+    }
+    &__list{
+        list-style: none;
+        margin: 0;
+        display: flex;
+        padding-top: 40px;
+        @include mixins.phone{
+            display: none;
+            padding-top: 0;
+            padding-left: 0;
+            background-color: variables.$color-accent;
+            position: absolute;
+            right: 0;
+        }
+    }
+    &__item{
+        margin: 0;
+        padding: 0;
+        @include mixins.phone{
+            border-bottom: 1px solid white;
+        }
+    }
+    &__ham{
+        position: absolute;
+        left: -9999px;
+        }
+
+   
+     &__link{
+        display: block;
+        font-family: variables.$special-font;
+        font-size: 18px;
+        text-decoration: none;
+        color: black;
+        padding-right: 15px;
+        @include mixins.phone{
+            padding-right: 0;
+            padding-left: 5px;
+            padding-right: 5px;
+            color: white;
+        }
+     }
+     &__ham:checked ~ .menu__list{
+        display: block;
+    }
+}
+.burger{
+    width: 35px;
+    @include mixins.pc{
+        display: none;
+    }
+}
+.header{
+    &__contact{
+        display: flex;
+        justify-content: flex-end;
+        background-color: variables.$color-primary;
+    }
+    &__icon-email, &__icon-phone{
+        max-width: 35px;
+        margin-right: 5px;
+    }
+    &__icon-email{
+        margin-left: 15%;
+    }
+}
+.mainheader{
+    &__inner{
+        @include mixins.flexbetween;
+	    align-items: center;
+    }
+
+    &__logoimg{
+        max-width: 200px;
+        background-color: white;
+        @include mixins.phone{
+            max-width: 100px;
+            margin-left: 15px;
+            margin-right: auto;
+        }
+    }
+}
+.line{
+    border-bottom: variables.$border;
+    max-width: 100%;
+}
+
+.footer{
+    background-color: variables.$color-primary;
+    display: flex;
+    font-size: 14px;
+    
+    &__flexbox{
+      @include mixins.flexbetween;
+      margin: 0 auto;
+      width: 850px;
+      @include mixins.phone{
+          width: 799px;
+          display: block;
+          text-align: center;
+          margin: 0;
+      }
+      &--news{
+        width: 450px;
+        @include mixins.phone{
+            width: 250px;
+            text-align:center;
+            display: inline-block;
+        }
+      }
+    }
+    
+    &__socialsites{
+        list-style: none;
+        display: flex;
+        padding-left: 0;
+        @include mixins.phone{
+            @include mixins.flexcenter;
+        }
+    }
+    &__icon-facebook, &__icon-linkedin {
+        max-width: 35px;
+        margin-right: 5px;
+    }
+    &__links{
+        list-style: none;
+        padding: 0;
+        
+    } 
+}
+.footer__link{
+    text-decoration: none;
+    color: black;
+    font-size: 14px;
+}
+.footerinfo{
+    @include mixins.phone{
+    text-align: center;
+    }
+}
+.copyright{
+    text-align: center;
+    height: 20px;
+    font-family: variables.$special-font;
+}  
+
+.heroimage{
+max-width: 100%;
+height: 300px;
+margin-left: auto;
+margin-right: auto;
+background-image: url(/images/help.jpg);
+background-repeat: no-repeat;
+background-size: cover;
+@include mixins.phone{
+    height: 150px;
+}
+}
+.mainbox-1part, .mainbox-2part{
+@include mixins.flexbetween;
+margin-top: 100px;
+@include mixins.phone{
+    display: inline-block;
+}
+}
+
+.mainbox-2part{
+margin-bottom: 100px;
+@include mixins.phone{
+    margin-top: 0;
+    margin-bottom: 50px;
+}
+}
+.mainbox-1part{
+margin-bottom: 0px;
+@include mixins.phone{
+    margin-top: 50px;
+}
+}
+.mainbox{
+max-width: 100%;
+display: flex;
+flex-direction: column;
+@include mixins.phone{
+    display: inline-flex;
+}
+
+&__box1, &__box2,&__box3, &__box4,&__box5, &__box6{
+   background-color: variables.$color-accent;
+   border-radius: 5%;
+   width: 250px;
+   height: 250px;
+   box-shadow: 0px 7px 10px variables.$color-primary;
+   margin-right: 50px;
+   margin-left: 0;
+   font-family: variables.$special-font;
+   font-weight: bold;
+   color: white;
+   text-align: center;
+   text-decoration: none;
+   @include mixins.phone{
+       margin-bottom: 10px;
+       width: 150px;
+       height: 150px;
+   }
+}
+.space{
+    @include mixins.phone{
+        height: 50px;
+    }
+}
+}
+h4{
+padding-top: 109px;
+font-size: 32px;
+margin-top: 0;
+@include mixins.phone{
+    font-size: 20px;
+    padding-top: 66px;
+}
+}
+h5{
+padding-top: 90px;
+font-size: 32px;
+margin-top: 0;
+@include mixins.phone{
+    font-size: 20px;
+    padding-top: 55px;
+}
+}
+.center{
+text-align: center;
+font-size: variables.$body-text;
+}
+a{
+text-decoration: none;
+}
+.sectiontitle, .sectiontitle-name{
+@include mixins.flexcenter;
+font-family: variables.$special-font;
+font-size: 32px;
+font-weight: bold;
+margin-top: 50px;
+@include mixins.phone{
+    text-align: center;
+}
+}
+.teambox{
+@include mixins.flexbetween;
+@include mixins.phone{
+    display: block;
+}
+
+&__photo{
+    height: 224px;
+    width: 224px;
+    @include mixins.imground;
+}
+&__profile{
+    margin-right: 50px;
+    height: 250px;
+    width: 250px;
+    color: black;
+    margin-bottom: 150px;  
+    @include mixins.phone{
+        margin-bottom: 50px;
+    }  
+}
+}
+.teambox1{
+display: flex;
+margin-top: 50px;
+@include mixins.phone{
+    display: block;
+    margin-top: 0;
+}
+}
+.member{
+    @include mixins.phone{
+        padding-top: 50px;
+    }
+}
+.lineteam{
+    @include mixins.phone{
+        border-bottom: variables.$border;
+        max-width: 100%;
+        padding-bottom: 25px;
+        padding-top: 25px;
+    }
+
+}
+.contact{
+    @include mixins.phone{
+        padding-top: 50px;
+    }
+}
+.contact__button{
+background-color:variables.$color-accent;
+@include mixins.flexaround;
+margin-left: auto;
+margin-right: auto;
+margin-bottom: 50px;
+border-style: none;
+border-radius: 5px;
+width: 250px;
+height: 60px;
+
+&--style{
+font-family: variables.$special-font;
+color: white;
+text-align: center;
+font-size: variables.$body-text;
+padding-top: 20px;
+padding-bottom: 20px;
+}
+}
+.ibox{
+    margin: 0 auto;
+    @include mixins.phone{
+        width: 250px;
+        text-align: center;
+    }
+}
+.infobox{
+    @include mixins.flexaround;
+    padding-top: 50px;
+    padding-bottom: 100px;
+    @include mixins.phone{
+        display: block;
+    }
+    
+    &__firm, &__office{
+        width: 320px;
+        height: 250px;
+        border-radius: 20px;
+        border: variables.$border;
+        padding: 18px;
+        text-align: center;
+        @include mixins.phone{
+            width: 250px;
+            height: 320px;
+        }
+    }
+    &__firm-icon, &__office-icon{
+        width: 70px;
+        height: 70px;
+    }
+}
+.infobox-box1, .infobox-box2{
+    @include mixins.phone{
+        padding-top: 15px;
+    }
+}
+.infobox__office{
+    @include mixins.phone{
+        margin-top: 15px;
+    }
+}
+.cbox{
+    @include mixins.phone{
+        margin: 0 auto;
+        width: 300px;
+        display: flex;
+        justify-content: center;
+    }
+}
+textarea{
+    resize: none;
+}
+.contactform{
+    margin-top: 50px;
+    margin-bottom: 100px;
+    &__button{
+        background-color:variables.$color-accent;
+    @include mixins.flexaround;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 50px;
+    border-style: none;
+    border-radius: 5px;
+    width: 250px;
+    height: 60px;
+    &--style{
+    font-family: variables.$special-font;
+    color: white;
+    text-align: center;
+    font-size: variables.$body-text;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    }
+    }
+    &__box{
+        margin-top: 50px;
+        width: 425px;
+        margin-left: auto;
+        margin-right: auto;
+        @include mixins.phone{
+            width: 300px;
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+}
+.contacttext{
+    margin-bottom: 50px;
+}
+.namesurname, .nameorganization, .contactmail, .contactphone, .contactform-text{
+    margin-bottom: 20px;
+}
+.sentbox{
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+fieldset{
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-right: 0;
+    height: 50px;
+}
+#fieldtext{
+    height: 170px;
+    width: 425px;
+    @include mixins.phone{
+    width: 300px;
+    }
+}
+textarea{
+    border: none;
+    padding-top: 0;
+    padding-bottom: 0;
+    padding-right: 0;
+    font-family: variables.$default-font;
+}
+textarea:focus{
+        outline: 0;
+    }
+#text1, #text2, #text3, #text4{
+    width: 400px;
+    padding: 0;
+    height: 30px;
+    border: none;
+    font-size: 14px;
+    @include mixins.phone{
+        width: 300px;
+    }
+}
+#text1:focus, #text2:focus, #text3:focus, #text4:focus{
+    outline: 0;
+}
+
+.codelame, .sluzby{
+    @include mixins.flexcenter;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    @include mixins.phone{
+        display: block;
+    }
+}
+.codelame{
+        &__identitaimg, &__propagaceimg, &__projektimg, &__tvorbawebuimg, &__financeimg, &__dalsiimg{
+        height: 500px;
+        width: 300px;
+        margin-right: 100px;
+        @include mixins.phone{
+            margin-right: 0;
+            width: 250px;
+            height: 450px;
+            background-size: cover;
+            margin-bottom: 50px;
+        }
+     }
+    &__identitaimg{
+        background-image: url(/images/codelame/identita_organizace.png);
+    }
+    &__propagaceimg{
+        background-image: url(/images/codelame/propagace.png);
+    }
+    &__projektimg{
+        background-image: url(/images/codelame/projectman.png);
+    }
+    &__tvorbawebuimg{
+        background-image: url(/images/codelame/web.png);
+    }
+    &__financeimg{
+        background-image: url(/images/codelame/financ.png);
+    }
+    &__dalsiimg{
+        background-image: url(/images/codelame/dalsi.png);
+    }
+    
+    &__text{
+        width: 300px;
+        @include mixins.phone{
+            width: 250px;
+        }
+    }
+}
+.sluzby{
+    &__kurzyimg, &__workshopyimg, &__konzultaceimg{
+        height: 500px;
+        width: 300px;
+        margin-right: 100px;
+        @include mixins.phone{
+            margin-right: 0;
+            width: 250px;
+            height: 450px;
+            background-size: cover;
+            margin-bottom: 50px;
+        }
+    }
+    &__kurzyimg{
+        background-image: url(/images/sluzby/kurzy.png);
+    }
+    &__workshopyimg{
+        background-image: url(/images/sluzby/workshopy.png);
+    }
+    &__konzultaceimg{
+        background-image: url(/images/sluzby/konzultace.png);
+    }
+    &__text{
+            width: 300px;
+            @include mixins.phone{
+                width: 250px;
+            }
+    }
+}
+.sectiontitle-text{
+    font-family: variables.$special-font;
+    font-size: 18px;
+    font-weight: normal;
+    @include mixins.flexcenter;
+    margin-top: 10px;
+}
+.profile{
+    @include mixins.flexcenter;
+    margin-top: 50px;
+    margin-bottom: 100px;
+    @include mixins.phone{
+        display: block;
+    }
+    &__box{
+        margin-right: 100px;
+        @include mixins.phone{
+            margin-bottom: 50px;
+            margin-right: 0;
+            text-align: center;
+        }
+    }
+    &__img{
+        height: 224px;
+        width: 224px;
+        background-size: cover;
+        @include mixins.imground;
+        }
+    &__text{
+        width: 300px;
+        @include mixins.phone{
+            width: 250px;
+        }
+    }
+    &__contact{
+        display: block;
+        @include mixins.phone{
+            text-align: center;
+        }
+        &--mail, &--web{
+        display: block;
+        text-align: center;
+        margin-top: 10px;
+        color: black;
+        font-family: variables.$special-font;
+        }
+    }
+}

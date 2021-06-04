@@ -1,0 +1,29 @@
+@use "variables";
+
+@mixin flexbetween{
+    display: flex;
+    justify-content: space-between;
+}
+@mixin flexcenter{
+    display: flex;
+    justify-content: center;
+}
+@mixin flexaround{
+    display: flex;
+    justify-content: space-around;
+}
+@mixin imground{
+    border-radius: 50%;
+    padding: 10px;
+    border: variables.$border
+}
+@mixin phone{
+    @media screen and (max-width: 800px){
+        @content;
+    }
+}
+@mixin pc{
+    @media screen and (min-width: 800px){
+        @content;
+    }
+}

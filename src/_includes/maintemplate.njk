@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    <link rel="manifest" href="/icons/site.webmanifest">
+    <link rel="mask-icon" href="/icons/safari-pinned-tab.svg" color="#11bc49">
+    <link rel="shortcut icon" href="/icons/favicon.ico">
+    <meta name="msapplication-TileColor" content="#00aba9">
+    <meta name="msapplication-TileImage" content="/icons/mstile-144x144.png">
+    <meta name="msapplication-config" content="/icons/browserconfig.xml">
+    <meta name="theme-color" content="#ffffff">
+    <title>Rozjeď neziskovku</title>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;300;500&family=Raleway:wght@100;300;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/style.css">    
+</head>
+<body>
+    <div class="wrapper">
+
+		<header class="header">
+			<div class="header__contact">
+				<a href="mailto:info@rozjedneziskovku.cz"><img class="header__icon-email" src="/images/mail.png"></a>
+				<a href="tel:00420-735-030-086"><img class="header__icon-phone" src="/images/phones.png"></a>
+			</div>
+        
+            <div class= "mainheader">
+			    <div class="mainheader__inner">
+				    <div class="mainheader__left">
+                        <a href="/"><img class="mainheader__logoimg" src="/images/logo.svg" alt="logo"></a>
+				    </div>
+                
+				    <nav class="menu">
+                        <input type="checkbox" class="menu__ham" id="menu-ham">
+                        <label for="menu-ham" class="menu__toggler"><img class="burger" src="/images/hamburger.png"></label>
+					    <ul class="menu__list">
+						    <li class="menu__item"><a href="/" class="menu__link">Úvod</a></li>
+						    <li class="menu__item"><a href="/codelame/" class="menu__link">Co děláme</a></li>
+						    <li class="menu__item"><a href="/sluzby/" class="menu__link">Služby</a></li>
+                            <li class="menu__item"><a href="/nastym/" class="menu__link">Náš tým</a></li>
+						    <li class="menu__item"><a href="/kontakt/" class="menu__link">Kontakt</a></li>
+					    </ul>
+				    </nav>
+                </div>
+			</div>
+            <div class="line"></div>
+        </header>
+        <main class="main">
+        {{ content | safe }}
+        </main>
+
+    <footer class="footer">
+        <div class="footer__flexbox">
+            <div class="footer__flexbox--info">
+                <h2>Údaje o společnosti</h2>
+                <p class="footerinfo"><strong>πpl, z.s.</strong><br>
+                   Řezáčova 750/16<br>
+                   624 00 Brno<br>
+                   IČ:........<br>
+                   zapsaný u Krajského soudu<br> 
+                   v Brně<br>
+                   spisová značka .......</p>
+                <ul class="footer__socialsites">
+                    <li><a href="https://www.facebook.com/"><img class="footer__icon-facebook" src="/images/facebook.png"></a></li>
+                    <li><a href="https://www.linkedin.com/"><img class="footer__icon-linkedin" src="/images/linkedin.png"></a></li>
+                </ul>
+            </div>
+
+            <div class="footer__flexbox--news">
+                <h2>Newsletter</h2>
+                <label class="news">
+                    Chcete dostávat pravidelné informace o nabídce kurzů a workshopů? <br>
+                    Nebo se dozvědět, na jakých projektech aktuálně pracujeme?<br>
+                    Přihlašte se k odběru našeho newsletteru zadáním svého emailu do pole níže. <br>
+                <input type="email" id="footer__newsletter" name="newsletter" placeholder="vas-email@email.cz">
+                <button type="submit">ODESLAT</button>
+                </label>
+            </div>
+
+            <div class="footer__flexbox--mainlinks">
+                <h2>Důležité stránky</h2>
+                <ul class="footer__links">
+                    <li><a href="/projekty/" class= "footer__link">Projekty</a></li>
+                    <li><a href="/sponzori/" class= "footer__link">Sponzoři</a></li>
+                    <li><a href="/nastym/" class= "footer__link">Náš tým</a></li>
+                    <li><a href="/podminky/" class= "footer__link">Obchodní podmínky</a></li>
+                    <li><a href="/gdpr/" class= "footer__link">Ochrana osobních údajů</a></li>
+                </ul>
+            </div>
+        </div>
+  </footer>
+
+    <div class="copyright">
+        &copy; 2021; Rozjeď neziskovku
+    </div>
+  
+
+
+</div>
+</body>
+</html>
